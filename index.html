@@ -8,14 +8,19 @@
   <style>
     :root{--bg:#1a1a1a;--card:#0f0f0f;--text:#e6e6e6;--muted:#999999;--accent:#808080}
     /* Ensure the background covers the full viewport and stays fixed to avoid a darker bar at the bottom */
-    html,body{height:100vh;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#0a0a0a 0%, #1a1a1a 100%);background-color:var(--bg);background-attachment:fixed;color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    .page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
+    html,body{height:100vh;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#0a0a0a 0%, #1a1a1a 100%);background-color:#1a1a1a;color:var(--text);overflow:hidden}
+    .page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px;overflow-y:auto}
     /* prevent the card from overflowing the viewport */
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:36px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.6);max-width:820px;width:100%;text-align:center}
-    .cover{width:320px;height:320px;margin:0 auto;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);display:block;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)}
+    .cover{width:320px;height:320px;margin:0 auto;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);display:block;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.8);margin-bottom:24px}
     @media (max-width:520px){.cover{width:220px;height:220px}}
     h1{font-size:1.4rem;margin:18px 0 6px;color:var(--text)}
     h2{font-size:1rem;margin:0 0 18px;color:var(--muted);font-weight:500}
+    /* Header and Footer */
+    .header{font-size:0.9rem;color:var(--muted);margin-bottom:24px;line-height:1.5}
+    .footer{font-size:0.8rem;color:var(--muted);margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);line-height:1.6}
+    .footer a{color:var(--accent);text-decoration:none}
+    .footer a:hover{text-decoration:underline}
     /* Platform grid styled like a table */
     .platforms{width:100%;margin:20px auto 0;border-collapse:separate;border-spacing:0 8px;table-layout:fixed}
     .platforms td{padding:12px 18px;text-align:center;vertical-align:middle;background:#3a3a3a;border-radius:10px}
@@ -38,6 +43,10 @@
 <body>
   <div class="page">
     <main class="card" role="main">
+      <div class="header">
+        <p>This page is a curated list of streaming platforms for the album <strong>"Shell and Core - عَ العَضم"</strong> by <strong>Tasgeelat Al-Husni - تسجيلات الحُسني</strong></p>
+      </div>
+
       <!-- Replace cover.jpg with your album cover file in the repo root, or change the src to an external URL -->
       <img id="cover" class="cover" src="cover.png" alt="Album cover art">
       <h1 id="album-title">Shell and Core - عَ العَضم</h1>
@@ -85,7 +94,7 @@
           <tr class="platform-row">
             <td class="platform-cell">
               <a class="platform" href="https://www.deezer.com/us/album/1005792691" aria-label="Open on Deezer">
-                <img class="logo-img" src="Deezer_logo_2023.svg" alt="Deezer logo">
+                <img class="logo-img" src="Deezer_logo,_2023.svg" alt="Deezer logo">
                 <span class="label">Deezer</span>
               </a>
             </td>
@@ -93,6 +102,10 @@
 
         </tbody>
       </table>
+
+      <footer class="footer">
+        <p>This is an independent artist-maintained landing page designed to promote the album across multiple streaming platforms. No visitor data is collected or stored. This page is hosted on GitHub Pages and contains no analytics, cookies, or tracking mechanisms.</p>
+      </footer>
     </main>
   </div>
 </body>
