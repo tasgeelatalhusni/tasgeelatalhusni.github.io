@@ -7,12 +7,12 @@
   <title>Album Landing — Replace with your album title</title>
   <style>
     :root{--bg:#1a1a1a;--card:#0f0f0f;--text:#e6e6e6;--muted:#999999;--accent:#808080}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#0a0a0a 0%, #1a1a1a 100%);color:var(--text)}
-    html,body{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    .page{min-height:100%;display:flex;align-items:center;justify-content:center;padding:48px}
+    /* Ensure the background covers the full viewport and stays fixed to avoid a darker bar at the bottom */
+    html,body{height:100vh;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#0a0a0a 0%, #1a1a1a 100%);background-color:var(--bg);background-attachment:fixed;color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    .page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
     /* prevent the card from overflowing the viewport */
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:36px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.6);max-width:820px;width:100%;text-align:center}
-    .cover{width:320px;height:320px;margin:0 auto;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);display:block;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.8)}
+    .cover{width:320px;height:320px;margin:0 auto;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);display:block;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)}
     @media (max-width:520px){.cover{width:220px;height:220px}}
     h1{font-size:1.4rem;margin:18px 0 6px;color:var(--text)}
     h2{font-size:1rem;margin:0 0 18px;color:var(--muted);font-weight:500}
